@@ -1,6 +1,9 @@
 flask
 sentence-transformers
-qdrant-client
 numpy
 python-dotenv
 groq
+Flask
+requests
+python-dotenv
+qdrant-client
