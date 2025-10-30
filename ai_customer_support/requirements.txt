@@ -1,0 +1,6 @@
+flask
+sentence-transformers
+qdrant-client
+numpy
+python-dotenv
+groq

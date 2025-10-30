@@ -1,0 +1,56 @@
+/* Center the chatbox vertically and horizontally */
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#chatbox {
+    width: 800px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+#messages {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#query {
+    width: calc(100% - 20px);
+    height: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+#send {
+    width: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+#send:hover {
+    background: #0056b3;
+}
+
+input, button {
+    font-size: 14px;
+}

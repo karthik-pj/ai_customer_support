@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Customer Support Co-Pilot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div id="chatbox">
+    <h2>AI Customer Support Co-Pilot</h2>
+    <div id="messages"></div>
+    <input type="text" id="query" placeholder="Type your question...">
+    <p></p>
+    <button id="send" onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+let session_id = "";
+
+async function sendMessage() {
+    const query = document.getElementById("query").value;
+    if (!query) return;
+    document.getElementById("messages").innerHTML += `<p><b>You:</b> ${query}</p>`;
+    
+    const res = await fetch("/ask", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({query, session_id})
+    });
+    
+    const data = await res.json();
+    session_id = data.session_id;
+    
+    document.getElementById("messages").innerHTML += `<p><b>AI:</b> ${data.response}</p>`;
+    document.getElementById("query").value = "";
+}
+</script>
+</body>
+</html>
