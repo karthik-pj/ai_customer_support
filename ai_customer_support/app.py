@@ -3,7 +3,7 @@ from rag_pipeline import get_context
 from llm_response import generate_ollama_response
 from conversation_memory import add_to_memory, get_recent_context
 import uuid
-import os
+
 
 app = Flask(__name__)
 
@@ -33,6 +33,6 @@ def ask():
     return jsonify({"response": ai_response, "session_id": session_id})
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(debug=True)
+
 
